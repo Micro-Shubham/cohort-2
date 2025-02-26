@@ -1,9 +1,14 @@
+import { CreateTodo } from "./component/createTodo"
+import { Todos } from "./component/Todos"
 
 
 function App() {
 
   return (
-    <div> Hi there</div>
+    <div>
+      <CreateTodo />
+      <Todos />
+    </div>
   )
 }
 
