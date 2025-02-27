@@ -2,7 +2,7 @@ const mangoose = require('mangoose');
 //mangodb url handy
 // paste ur url here
 // create .env file not paste your url
-mangoose.connect("url")
+mangoose.connect('mongodb+srv://admin:Shubham@cluster0.7pbjx.mongodb.net/')
 const todoSchema = mangoose.Schema({
     title:String,
     description: String,
