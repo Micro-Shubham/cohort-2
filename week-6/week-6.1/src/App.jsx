@@ -4,7 +4,7 @@ function App() {
   // usestate
   const [title, setTitle] = useState("My name is hakirat")
  function upDateTitle() {
-  setTitle("my name is "+Math.random())
+  setTitle("My name is "+Math.random())
  }
   return  (
     // if you don't want to put div as parent you can simply
