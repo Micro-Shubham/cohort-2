@@ -50,7 +50,7 @@ function App() {
     <div>
       <button onClick={addTodo}>Add a Todo</button>
       {/* there  is two ways to do it  */}
-     {todos.map(todo => <Todo key={todo?.id} title={todo?.title} description={todo?.description}/>)}
+     {todos.map(todo => <Todo key={Math.random()} title={todo?.title} description={todo?.description}/>)}
       {/* or  */}
       {/* {todos.map(function (todo) {
         return <Todo title={todo.title} description={todo.description} />
