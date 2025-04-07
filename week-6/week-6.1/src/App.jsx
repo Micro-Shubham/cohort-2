@@ -13,7 +13,7 @@ function App() {
     <>
     <button onClick={upDateTitle}>Click here to change the first header</button>
       <Header title={title}></Header>
-      <Header title="My name is Raman"></Header>
+      <Header title="My name is Harkirat Singh"></Header>
     </>
   )
   
