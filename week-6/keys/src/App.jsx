@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+// global decleration
+let counter = 4;
 function App() {
   // state that has already three todo in it
   const [todos, setTodos] = useState([
@@ -9,12 +11,12 @@ function App() {
       description: "go to gym today",
     },
     {
-      id: 1,
+      id: 2,
       title: "go to market",
       description: "go to market today",
     },
     {
-      id: 1,
+      id: 3,
       title: "go to school",
       description: "go to school today",
     },
@@ -26,7 +28,7 @@ function App() {
     setTodos([
       ...todos,
       {
-        id: 4,
+        id: counter++,
         title: Math.random(),
         description: Math.random(),
       },
@@ -48,7 +50,7 @@ function App() {
     <div>
       <button onClick={addTodo}>Add a Todo</button>
       {/* there  is two ways to do it  */}
-     {todos.map(todo => <Todo title={todo?.title} description={todo?.description}/>)}
+     {todos.map(todo => <Todo key={todo?.id} title={todo?.title} description={todo?.description}/>)}
       {/* or  */}
       {/* {todos.map(function (todo) {
         return <Todo title={todo.title} description={todo.description} />
