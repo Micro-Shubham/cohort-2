@@ -25,7 +25,7 @@ function App() {
   
 }
 // this help to avoid re rendering whole parents div 
-// to avoid we push it to the component
+// to avoid we push state  to the component
 // when click on button it re render only that component not whole div
 // goal is to make our application more optimal 
 function HeaderWithButton() {
