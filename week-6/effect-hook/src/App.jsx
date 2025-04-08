@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-
+import axios from "axios"
 function App() {
 
 
 
   return <>
-   <Todo id={3} />
+   <Todo id={1} />
   </>;
 }
 // component
@@ -14,6 +14,9 @@ function Todo({id}) {
   // implement useEffect here
   useEffect(() => {
    axios.get("https://dummyjson.com/todos/"+id)
+    .then(response => {
+      setTodo(response.data)
+    })
   },[])
 
   return <div>
@@ -21,7 +24,7 @@ function Todo({id}) {
       {todo.todo}
     </h1>
     <h1>
-      {todo.completed}
+      {todo.userId}
     </h1>
   </div>
 
