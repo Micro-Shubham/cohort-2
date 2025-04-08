@@ -1,13 +1,18 @@
-import { useState } from 'react'
+import { useState,useMemo } from 'react'
 
 
 function App() {
  const [counter, setCounter] = useState(0);
  const [inputValue, setInputValue] = useState(1);
- let count = 0;
+ // usememo
+ let count = useMemo(() =>{
+ let finalcount = 0;
  for(let i = 1; i <= inputValue; i++) {
-  count = count +i;
+  finalcount = finalcount +i;
  } 
+ return finalcount 
+ }, [inputValue]) // run only when input value changes
+ // this helps to optimise and avoid re rendering unncessarly
 
   return (
     <>
