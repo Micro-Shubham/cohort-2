@@ -6,8 +6,13 @@ function App() {
 
   return (
     <div>
-      <div style={{background: "black" , color:"white"}}>
-      Hi there from topbar 
+      <div >
+        <button onClick={() => {
+          window.location.href ="/"
+        }}>Landing Page</button>
+        <button onClick={() => {
+          window.location.href ="/Dashboard"
+        }}>Dashboard Page</button>
       </div>
    <BrowserRouter>
    <Routes>
