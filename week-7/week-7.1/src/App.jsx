@@ -3,18 +3,11 @@ import { Dashboard } from "./Components/Dashboard"
 import { Landing } from "./Components/Landing"
 
 function App() {
-const navigate = useNavigate();
   return (
     <div>
-      <div >
-        <button onClick={() => {
-          navigate("/")
-        }}>Landing Page</button>
-        <button onClick={() => {
-          navigate("/Dashboard")
-        }}>Dashboard Page</button>
-      </div>
+     
    <BrowserRouter>
+   <Appbar />
    <Routes>
       <Route  path="/Dashboard" element={<Dashboard />} />
       <Route path="/" element={<Landing />} /> 
@@ -23,6 +16,17 @@ const navigate = useNavigate();
    </BrowserRouter> 
    </div>
   )
+}
+function Appbar(){
+const navigate = useNavigate();
+return   <div >
+        <button onClick={() => {
+          navigate("/")
+        }}>Landing Page</button>
+        <button onClick={() => {
+          navigate("/Dashboard")
+        }}>Dashboard Page</button>
+      </div>
 }
 
 export default App
