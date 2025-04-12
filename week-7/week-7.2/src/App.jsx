@@ -1,7 +1,7 @@
 import React from "react"
 import { CountContext } from './context'
 import { useContext } from 'react'
-import { RecoilRoot, useRecoilState, useRecoilValue } from 'recoil'
+import { RecoilRoot, useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
 import { countAtom } from './store/atoms/count'
 // contextApi is help to tackle the prop drilling 
 // it directly telpot the props to required child
@@ -18,6 +18,7 @@ function App() {
   )
 }
 function Count ({ }){
+  console.log("re-render")
   return <div>
     <CountRenderer />
     <Button />
@@ -30,10 +31,11 @@ function CountRenderer() {
   </div>
 }
 function Button ({}) {
-  const [count , setCount] = useRecoilState(countAtom);
+  console.log("button re-render")
+  const setCount = useSetRecoilState(countAtom)
   return <div>
-    <button onClick={() => {setCount(count +1)}}> Increase</button>
-    <button onClick={() => {setCount(count -1)}}> Decrease</button>
+    <button onClick={() => {setCount(count => count +1)}}> Increase</button>
+    <button onClick={() => {setCount(count => count -1)}}> Decrease</button>
   </div>
 }
 
