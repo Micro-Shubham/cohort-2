@@ -1,6 +1,6 @@
 import React from "react"
 import {RecoilRoot, useRecoilState, useRecoilValue} from "recoil"
-import { jobAtom, messagingAtom, networkAtom, notificationAtom } from './atom'
+import { jobAtom, messagingAtom, networkAtom, notificationAtom, totalNotificationSelector } from './atom'
 function App() {
 
   return (
@@ -24,7 +24,8 @@ function MainApp() {
   // final count
   // but to optimise it you can use usememo for it 
   // but we will understand how to use Selector
-  const totalNotificationCount = networknotification + jobsAtomCount + notificationCount + messagingCount;
+  const totalNotificationCount = useRecoilValue(totalNotificationSelector)
+  // const totalNotificationCount = networknotification + jobsAtomCount + notificationCount + messagingCount;
   return (
     <>
      <button>Home</button>
