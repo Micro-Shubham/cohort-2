@@ -25,7 +25,10 @@ function MainApp() {
   // but to optimise it you can use usememo for it 
   // but we will understand how to use Selector
   const totalNotificationCount = useRecoilValue(totalNotificationSelector)
-  // const totalNotificationCount = networknotification + jobsAtomCount + notificationCount + messagingCount;
+
+  // const totalNotificationCount = useMemo(() => {
+  //  networknotification + jobsAtomCount + notificationCount + messagingCount
+  //  },[ networknotification + jobsAtomCount + notificationCount + messagingCount])
   return (
     <>
      <button>Home</button>
