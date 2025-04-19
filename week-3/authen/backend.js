@@ -1,6 +1,17 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
+const mongoose = require("mongoose")
 const jwtPassword = "123456";
+mongoose.connect(
+  "mongodb+srv://user:Userid@cluster0.7pbjx.mongodb.net/"
+)
+const User = mongoose.model('Users', {name:String, email:String, password:String});
+const user = new User({
+  name: "Shubham Yadav",
+  email: "shubham@gmail.com",
+  password: "234"
+})
+user.save();
 
 const app = express();
 app.use(express.json())
