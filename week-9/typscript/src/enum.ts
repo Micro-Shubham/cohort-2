@@ -6,14 +6,26 @@
 
 // one way to tell that it should string but only run when 
 // keypressed is up , down , right, left
-type keyinput = "up" | "down" | "right" | "left"
-
-function doSomething(keyPressed:keyinput) {
-    // do something
+// type keyinput = "up" | "down" | "right" | "left"
+// lets solve this issue using enum
+enum Direction {
+    Up,
+    Down,
+    Left,
+    Right
 }
 
-doSomething("up")
-doSomething("down")
+function doSomething(keyPressed:Direction) {
+    // do something
+    if(keyPressed == Direction.Up) {
+        // do something
+    }
+}
+
+doSomething(Direction.Up)
+doSomething(Direction.Right)
 // if i try to key any random string ts will throw error 
 // doSomething("sdfjasdj")
 // ..
+console.log(Direction.Down)
+console.log(Direction.Left)
